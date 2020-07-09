@@ -22,6 +22,8 @@ Route::get('/recipes','RecipesController@show');
 Route::get('/recipes/supplements','RecipeSupplementController@show');
 
 Route::post('/recipes/create','RecipesController@store');
+Route::post('/recipes/update','RecipesController@update');
+Route::post('/recipes/delete','RecipesController@delete');
 
 Route::get('/recipes/supplements/{id}','RecipeSupplementController@getSupplementsFromRecipeId');
 Route::get('/recipes/{username}','RecipesController@getRecipesFromUserName');
