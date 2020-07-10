@@ -30,6 +30,8 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
   Route::get('/recipes/supplements/{id}','RecipeSupplementController@getSupplementsFromRecipeId');
   Route::get('/recipes/{username}','RecipesController@getRecipesFromUserName');
+
+  Route::post('/coffee/newcoffee', 'CoffeeController@store');
 });
 
 Route::post('register', 'AuthController@register');
