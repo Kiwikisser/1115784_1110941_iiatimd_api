@@ -18,8 +18,8 @@ class CreateCoffeesTable extends Migration
             $table->String('coffee_ingredients');
             $table->longText('coffee_description');
             $table->String('coffee_bean')->default('Arabica');
-            $table->String('coffee_servings');
-            $table->String('coffee_preptime');
+            $table->integer('coffee_servings');
+            $table->integer('coffee_preptime');
             $table->String('coffee_image');
         });
     }
