@@ -15,12 +15,12 @@ class CreateCoffeesTable extends Migration
     {
         Schema::create('coffees', function (Blueprint $table) {
             $table->String('coffee_name');
-            $table->longText('coffee_ingredients');
+            $table->String('coffee_ingredients');
             $table->longText('coffee_description');
-            $table->longText('coffee_bean');
-            $table->longText('coffee_servings');
-            $table->longText('coffee_preptime');
-            $table->longText('coffee_image');
+            $table->String('coffee_bean')->default('Arabica');
+            $table->String('coffee_servings');
+            $table->String('coffee_preptime');
+            $table->String('coffee_image');
         });
     }
 
