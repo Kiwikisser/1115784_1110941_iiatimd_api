@@ -31,9 +31,7 @@ class CoffeeController extends Controller
           $item->save();
           return true;
         } catch (\Exception $e) {
-          return $e
+          return $e;
         }
-
-
       }
 }
