@@ -21,7 +21,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/recipes','RecipesController@show');
 Route::get('/recipes/supplements','RecipeSupplementController@show');
 
-Route::post('/recipes/create','RecipesController@store');
+Route::group(['middleware' => 'jwt.auth'], function () {
+
+  Route::post('/recipes/create','RecipesController@store');
+
+});
 
 Route::get('/recipes/supplements/{id}','RecipeSupplementController@getSupplementsFromRecipeId');
 Route::get('/recipes/{username}','RecipesController@getRecipesFromUserName');
+
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::get('logout', 'AuthController@logout');
+Route::get('user', 'AuthController@getAuthUser');
